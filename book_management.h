@@ -12,8 +12,8 @@
 
 typedef struct _Book {
     unsigned int id; //Book ID
-    char *title; //book title
-    char *authors; //comma separated list of authors
+    char title[20]; //book title
+    char authors[20]; //comma separated list of authors
     unsigned int year; // year of publication
     unsigned int copies; //number of copies the library has
     struct _Book *next; //pointer to the next book element
@@ -36,36 +36,45 @@ int load_books(FILE *file);
 
 //adds a book to the ones available to the library
 //returns 0 if the book could be added, or an error code otherwise
-int add_book(Book book);
+int add_book(pBook book);
 
 //removes a book from the library
 //returns 0 if the book could be successfully removed, or an error code otherwise.
-int remove_book(Book book);
+int remove_book(pBook head);
 
 //finds books with a given title.
 //returns a BookList structure, where the field "list" is a list of books, or null if no book with the
 //provided title can be found. The length of the list is also recorded in the returned structure, with 0 in case
 //list is the NULL pointer.
-BookList find_book_by_title (const char *title);
+void find_book_by_title (const char *title,pBook head);
 
 //finds books with the given authors.
 //returns a Booklist structure, where the field "list" is a newly allocated list of books, or null if no book with the
 //provided title can be found. The length of the list is also recorded in the returned structure, with 0 in case
 //list is the NULL pointer.
-BookList find_book_by_author (const char *author);
+void find_book_by_author (const char *author,pBook head);
 
 //finds books published in the given year.
 //returns a Booklist structure, where the field "list" is a list of books, or null if no book with the
 //provided title can be found. The length of the list is also recorded in the returned structure, with 0 in case
 //list is the NULL pointer.
-BookList find_book_by_year (unsigned int year);
+void find_book_by_year (unsigned int year,pBook head);
 
 //name username and password
 typedef struct LNode
 {
+    char username[20];
     char name[20];
     char pass[20];
     struct LNode *next;
 } LNode,*pNode;
 
+typedef struct BorrowedBook {
+    unsigned int id; //Book ID
+    char title[20]; //book title
+    char authors[20]; //comma separated list of authors
+    unsigned int year; // year of publication
+    unsigned int copies; //number of copies the library has
+    struct _Book *next; //pointer to the next book element
+}BorrowedBook,*bBook;
 #endif

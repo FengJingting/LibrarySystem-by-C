@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: cw3
+# Project: cw1
 # Configurations: Debug
 # =============================================================================
 
@@ -39,94 +39,94 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = C$:/Users/udii/Desktop/C/cw3/cmake-build-debug/
+cmake_ninja_workdir = C$:/Users/udii/Desktop/C/cw1/lussiano.github.io/cmake-build-debug/
 # =============================================================================
-# Object build statements for EXECUTABLE target cw3
+# Object build statements for EXECUTABLE target cw1
 
 
 #############################################
-# Order-only phony target for cw3
+# Order-only phony target for cw1
 
-build cmake_object_order_depends_target_cw3: phony || CMakeFiles/cw3.dir
+build cmake_object_order_depends_target_cw1: phony || CMakeFiles/cw1.dir
 
-build CMakeFiles/cw3.dir/main.c.obj: C_COMPILER__cw3_Debug C$:/Users/udii/Desktop/C/cw3/main.c || cmake_object_order_depends_target_cw3
-  DEP_FILE = CMakeFiles\cw3.dir\main.c.obj.d
+build CMakeFiles/cw1.dir/main.c.obj: C_COMPILER__cw1_Debug C$:/Users/udii/Desktop/C/cw1/lussiano.github.io/main.c || cmake_object_order_depends_target_cw1
+  DEP_FILE = CMakeFiles\cw1.dir\main.c.obj.d
   FLAGS = -g -std=gnu99
-  OBJECT_DIR = CMakeFiles\cw3.dir
-  OBJECT_FILE_DIR = CMakeFiles\cw3.dir
+  OBJECT_DIR = CMakeFiles\cw1.dir
+  OBJECT_FILE_DIR = CMakeFiles\cw1.dir
 
-build CMakeFiles/cw3.dir/user.c.obj: C_COMPILER__cw3_Debug C$:/Users/udii/Desktop/C/cw3/user.c || cmake_object_order_depends_target_cw3
-  DEP_FILE = CMakeFiles\cw3.dir\user.c.obj.d
+build CMakeFiles/cw1.dir/user.c.obj: C_COMPILER__cw1_Debug C$:/Users/udii/Desktop/C/cw1/lussiano.github.io/user.c || cmake_object_order_depends_target_cw1
+  DEP_FILE = CMakeFiles\cw1.dir\user.c.obj.d
   FLAGS = -g -std=gnu99
-  OBJECT_DIR = CMakeFiles\cw3.dir
-  OBJECT_FILE_DIR = CMakeFiles\cw3.dir
+  OBJECT_DIR = CMakeFiles\cw1.dir
+  OBJECT_FILE_DIR = CMakeFiles\cw1.dir
 
-build CMakeFiles/cw3.dir/utility.c.obj: C_COMPILER__cw3_Debug C$:/Users/udii/Desktop/C/cw3/utility.c || cmake_object_order_depends_target_cw3
-  DEP_FILE = CMakeFiles\cw3.dir\utility.c.obj.d
+build CMakeFiles/cw1.dir/utility.c.obj: C_COMPILER__cw1_Debug C$:/Users/udii/Desktop/C/cw1/lussiano.github.io/utility.c || cmake_object_order_depends_target_cw1
+  DEP_FILE = CMakeFiles\cw1.dir\utility.c.obj.d
   FLAGS = -g -std=gnu99
-  OBJECT_DIR = CMakeFiles\cw3.dir
-  OBJECT_FILE_DIR = CMakeFiles\cw3.dir
+  OBJECT_DIR = CMakeFiles\cw1.dir
+  OBJECT_FILE_DIR = CMakeFiles\cw1.dir
 
-build CMakeFiles/cw3.dir/library.c.obj: C_COMPILER__cw3_Debug C$:/Users/udii/Desktop/C/cw3/library.c || cmake_object_order_depends_target_cw3
-  DEP_FILE = CMakeFiles\cw3.dir\library.c.obj.d
+build CMakeFiles/cw1.dir/library.c.obj: C_COMPILER__cw1_Debug C$:/Users/udii/Desktop/C/cw1/lussiano.github.io/library.c || cmake_object_order_depends_target_cw1
+  DEP_FILE = CMakeFiles\cw1.dir\library.c.obj.d
   FLAGS = -g -std=gnu99
-  OBJECT_DIR = CMakeFiles\cw3.dir
-  OBJECT_FILE_DIR = CMakeFiles\cw3.dir
+  OBJECT_DIR = CMakeFiles\cw1.dir
+  OBJECT_FILE_DIR = CMakeFiles\cw1.dir
 
-build CMakeFiles/cw3.dir/librarian.c.obj: C_COMPILER__cw3_Debug C$:/Users/udii/Desktop/C/cw3/librarian.c || cmake_object_order_depends_target_cw3
-  DEP_FILE = CMakeFiles\cw3.dir\librarian.c.obj.d
+build CMakeFiles/cw1.dir/librarian.c.obj: C_COMPILER__cw1_Debug C$:/Users/udii/Desktop/C/cw1/lussiano.github.io/librarian.c || cmake_object_order_depends_target_cw1
+  DEP_FILE = CMakeFiles\cw1.dir\librarian.c.obj.d
   FLAGS = -g -std=gnu99
-  OBJECT_DIR = CMakeFiles\cw3.dir
-  OBJECT_FILE_DIR = CMakeFiles\cw3.dir
+  OBJECT_DIR = CMakeFiles\cw1.dir
+  OBJECT_FILE_DIR = CMakeFiles\cw1.dir
 
-build CMakeFiles/cw3.dir/reg_or_login.c.obj: C_COMPILER__cw3_Debug C$:/Users/udii/Desktop/C/cw3/reg_or_login.c || cmake_object_order_depends_target_cw3
-  DEP_FILE = CMakeFiles\cw3.dir\reg_or_login.c.obj.d
+build CMakeFiles/cw1.dir/reg_or_login.c.obj: C_COMPILER__cw1_Debug C$:/Users/udii/Desktop/C/cw1/lussiano.github.io/reg_or_login.c || cmake_object_order_depends_target_cw1
+  DEP_FILE = CMakeFiles\cw1.dir\reg_or_login.c.obj.d
   FLAGS = -g -std=gnu99
-  OBJECT_DIR = CMakeFiles\cw3.dir
-  OBJECT_FILE_DIR = CMakeFiles\cw3.dir
+  OBJECT_DIR = CMakeFiles\cw1.dir
+  OBJECT_FILE_DIR = CMakeFiles\cw1.dir
 
-build CMakeFiles/cw3.dir/search_for_books.c.obj: C_COMPILER__cw3_Debug C$:/Users/udii/Desktop/C/cw3/search_for_books.c || cmake_object_order_depends_target_cw3
-  DEP_FILE = CMakeFiles\cw3.dir\search_for_books.c.obj.d
+build CMakeFiles/cw1.dir/search_for_books.c.obj: C_COMPILER__cw1_Debug C$:/Users/udii/Desktop/C/cw1/lussiano.github.io/search_for_books.c || cmake_object_order_depends_target_cw1
+  DEP_FILE = CMakeFiles\cw1.dir\search_for_books.c.obj.d
   FLAGS = -g -std=gnu99
-  OBJECT_DIR = CMakeFiles\cw3.dir
-  OBJECT_FILE_DIR = CMakeFiles\cw3.dir
+  OBJECT_DIR = CMakeFiles\cw1.dir
+  OBJECT_FILE_DIR = CMakeFiles\cw1.dir
 
-build CMakeFiles/cw3.dir/test.c.obj: C_COMPILER__cw3_Debug C$:/Users/udii/Desktop/C/cw3/test.c || cmake_object_order_depends_target_cw3
-  DEP_FILE = CMakeFiles\cw3.dir\test.c.obj.d
+build CMakeFiles/cw1.dir/test.c.obj: C_COMPILER__cw1_Debug C$:/Users/udii/Desktop/C/cw1/lussiano.github.io/test.c || cmake_object_order_depends_target_cw1
+  DEP_FILE = CMakeFiles\cw1.dir\test.c.obj.d
   FLAGS = -g -std=gnu99
-  OBJECT_DIR = CMakeFiles\cw3.dir
-  OBJECT_FILE_DIR = CMakeFiles\cw3.dir
+  OBJECT_DIR = CMakeFiles\cw1.dir
+  OBJECT_FILE_DIR = CMakeFiles\cw1.dir
 
-build CMakeFiles/cw3.dir/libararian.c.obj: C_COMPILER__cw3_Debug C$:/Users/udii/Desktop/C/cw3/libararian.c || cmake_object_order_depends_target_cw3
-  DEP_FILE = CMakeFiles\cw3.dir\libararian.c.obj.d
+build CMakeFiles/cw1.dir/libararian.c.obj: C_COMPILER__cw1_Debug C$:/Users/udii/Desktop/C/cw1/lussiano.github.io/libararian.c || cmake_object_order_depends_target_cw1
+  DEP_FILE = CMakeFiles\cw1.dir\libararian.c.obj.d
   FLAGS = -g -std=gnu99
-  OBJECT_DIR = CMakeFiles\cw3.dir
-  OBJECT_FILE_DIR = CMakeFiles\cw3.dir
+  OBJECT_DIR = CMakeFiles\cw1.dir
+  OBJECT_FILE_DIR = CMakeFiles\cw1.dir
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target cw3
+# Link build statements for EXECUTABLE target cw1
 
 
 #############################################
-# Link the executable cw3.exe
+# Link the executable cw1.exe
 
-build cw3.exe: C_EXECUTABLE_LINKER__cw3_Debug CMakeFiles/cw3.dir/main.c.obj CMakeFiles/cw3.dir/user.c.obj CMakeFiles/cw3.dir/utility.c.obj CMakeFiles/cw3.dir/library.c.obj CMakeFiles/cw3.dir/librarian.c.obj CMakeFiles/cw3.dir/reg_or_login.c.obj CMakeFiles/cw3.dir/search_for_books.c.obj CMakeFiles/cw3.dir/test.c.obj CMakeFiles/cw3.dir/libararian.c.obj
+build cw1.exe: C_EXECUTABLE_LINKER__cw1_Debug CMakeFiles/cw1.dir/main.c.obj CMakeFiles/cw1.dir/user.c.obj CMakeFiles/cw1.dir/utility.c.obj CMakeFiles/cw1.dir/library.c.obj CMakeFiles/cw1.dir/librarian.c.obj CMakeFiles/cw1.dir/reg_or_login.c.obj CMakeFiles/cw1.dir/search_for_books.c.obj CMakeFiles/cw1.dir/test.c.obj CMakeFiles/cw1.dir/libararian.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\cw3.dir
+  OBJECT_DIR = CMakeFiles\cw1.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_FILE = cw3.exe
-  TARGET_IMPLIB = libcw3.dll.a
-  TARGET_PDB = cw3.exe.dbg
+  TARGET_FILE = cw1.exe
+  TARGET_IMPLIB = libcw1.dll.a
+  TARGET_PDB = cw1.exe.dbg
 
 
 #############################################
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\udii\Desktop\C\cw3\cmake-build-debug && "D:\clion\CLion 2021.3\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  COMMAND = cmd.exe /C "cd /D C:\Users\udii\Desktop\C\cw1\lussiano.github.io\cmake-build-debug && "D:\clion\CLion 2021.3\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -137,7 +137,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\udii\Desktop\C\cw3\cmake-build-debug && "D:\clion\CLion 2021.3\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -SC:\Users\udii\Desktop\C\cw3 -BC:\Users\udii\Desktop\C\cw3\cmake-build-debug"
+  COMMAND = cmd.exe /C "cd /D C:\Users\udii\Desktop\C\cw1\lussiano.github.io\cmake-build-debug && "D:\clion\CLion 2021.3\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -SC:\Users\udii\Desktop\C\cw1\lussiano.github.io -BC:\Users\udii\Desktop\C\cw1\lussiano.github.io\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -147,7 +147,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
-build cw3: phony cw3.exe
+build cw1: phony cw1.exe
 
 # =============================================================================
 # Folder targets.
@@ -155,9 +155,9 @@ build cw3: phony cw3.exe
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/udii/Desktop/C/cw3/cmake-build-debug
+# Folder: C:/Users/udii/Desktop/C/cw1/lussiano.github.io/cmake-build-debug
 
-build all: phony cw3.exe
+build all: phony cw1.exe
 
 # =============================================================================
 # Built-in targets
