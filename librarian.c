@@ -1,18 +1,11 @@
 #include <stdio.h>
-#include "libararian.h"
+#include "library.h"
 #include "book_management.h"
 #include "search_for_books.h"
-#include <malloc.h>
+#include "utility.h"
 #include <string.h>
 #include <stdlib.h>
 
-pBook create_Book_List()
-{
-    // initialize head node
-    pBook pHead = (pBook)malloc(sizeof(Book));
-    pHead->next=NULL;
-    return pHead;
-}
 
 int add_book(pBook head)
 {
@@ -22,13 +15,15 @@ int add_book(pBook head)
     unsigned int year;
     unsigned int copies;
     printf("Enter the title of the book you wish to add:");
-    scanf("%s",title);
+    scanf("\n");
+    gets(title);
     printf("Enter the author of the book you wish to add:");
     scanf("%s",authors);
     printf("Enter the year of the book you wish to add was released:");
     scanf("%u",&year);
     printf("Enter the number of copies of the book:");
     scanf("%u",&copies);
+
     int bookNum = 1;
     if(!temp)
     {
@@ -37,6 +32,7 @@ int add_book(pBook head)
     }else {
         while(temp)
         {
+            bookNum ++ ;
             if(temp->title == title)
             {
                 printf("Book already exits.");
@@ -49,13 +45,11 @@ int add_book(pBook head)
         while(temp->next)
         {
             temp = temp->next;
-            bookNum ++ ;
         }
         pBook last = (pBook)malloc(sizeof(Book));
         temp->next = last;
         temp = last;
     }
-    //表中有用户则在最后一个节点后生成新节点
     temp->id = bookNum;
     strcpy(temp->title,title);
     strcpy(temp->authors,authors);
@@ -64,6 +58,7 @@ int add_book(pBook head)
     temp->next=NULL;
     return 1;
 }
+
 int remove_book(pBook head){
     pBook temp = head->next;
     pBook tail = head;
@@ -89,60 +84,37 @@ int remove_book(pBook head){
     }
     printf("Book doesn't exist!");
     return 0;
-
-
 };
 
-int display_book(pBook head){
-    if(NULL==head->next)
-    {
-        printf("No book in the Library.\n");
-        getchar();
-        return 0;
+void store_books(pBook head){
+    FILE *fw = fopen("books.txt","wt");
+    pBook temp=head->next;
+//    if(temp==NULL){
+//        printf(("NodeList is NULL"));
+//        return;
+//    }
+    while(temp){
+        fprintf(fw,"%u\t%s\t%s\t%u\t%u\n", temp->id, temp->title, temp->authors, temp->year, temp->copies);
+        temp  = temp->next;
     }
-    pBook temp = head->next;
-    printf("ID\t\tTitle\t\tAuthor\t\tyear\t\tcopies\n");
-    while(temp)
-    {
-        printf("%u\t\t",temp->id);
-        printf("%s\t\t",temp->title);
-        printf("%s\t\t",temp->authors);
-        printf("%u\t\t",temp->year);
-        printf("%u\n",temp->copies);
-
-        temp = temp->next;
-    }
-    getchar();
-    return 1;
+    fclose(fw);
 }
 
-int Book_Menu()
-{
-    int choice;
-    printf("\nLibrarian Menu\n");
-    printf("\n1.Add a book\n");
-    printf("2.Remove a book\n");
-    printf("3.Search for books\n");
-    printf("4.Display all books\n");
-    printf("5.Log out\n");
-    printf("enter your choice:\n");
-    scanf("%d",&choice);
-    return choice;
-}
-int librarian_login(){
-    int choice;
-    pBook head = create_Book_List();
-    while(1)
+void librarian_login(pBook head){
+    int choice = 0;
+    int librarianLoggedIn = 1;
+    while(librarianLoggedIn)
     {
-        choice = Book_Menu();
+        printf("\n Librarian options\n 1.Add a book\n 2.Remove a book\n 3.Search for books\n 4.Display all books\n 5.Log out\n Choice:");
+        scanf("%d",&choice);
         if(1==choice)
         {
             int x = add_book(head);
+            store_books(head);
             if(x==1){
                 printf("Successfully add book!\n");
                 display_book(head);
             }
-
         }
         else if(2==choice)
         {
@@ -151,8 +123,10 @@ int librarian_login(){
                 printf("Successfully remove book!\n");
                 display_book(head);
             }
-
-
+        }
+        else if(0==choice)
+        {
+            printf("please continue");
         }
         else if(3==choice)
         {
@@ -164,12 +138,16 @@ int librarian_login(){
         }
         else if(5==choice)
         {
-            return 0;
+            librarianLoggedIn = 0;
         }
         else
         {
             printf("Invalid Choice");
+
         }
     }
+
 }
+
+
 

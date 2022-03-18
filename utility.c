@@ -1,8 +1,6 @@
+#include "utility.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-
-#include "utility.h"
 
 ////
 // Utility functions to handle "safer" string input
@@ -23,16 +21,4 @@ int optionChoice( void ) {
     option = (int)atoi(line);
 
     return option;
-}
-
-// remove newline character from the fgets() input
-
-void removeNewLine(char* string) {
-
-    size_t length = strlen(string);
-
-    if((length > 0) && (string[length-1] == '\n')) {
-        string[length-1] ='\0';
-    }
-    return;
 }

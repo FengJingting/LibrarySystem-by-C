@@ -1,7 +1,6 @@
 #include "library.h"
 
-int main()
-{
+int main() {
     run_library();
     return 0;
 }

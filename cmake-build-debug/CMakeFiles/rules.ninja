@@ -6,7 +6,7 @@
 # It is included in the main 'build.ninja'.
 
 # =============================================================================
-# Project: cw1
+# Project: project
 # Configurations: Debug
 # =============================================================================
 # =============================================================================
@@ -14,18 +14,18 @@
 #############################################
 # Rule for compiling C files.
 
-rule C_COMPILER__cw1_Debug
+rule C_COMPILER__project_Debug
   depfile = $DEP_FILE
   deps = gcc
-  command = "D:\clion\CLion 2021.3\bin\mingw\bin\gcc.exe" $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  command = D:\MinGW\bin\gcc.exe $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
   description = Building C object $out
 
 
 #############################################
 # Rule for linking C executable.
 
-rule C_EXECUTABLE_LINKER__cw1_Debug
-  command = cmd.exe /C "$PRE_LINK && "D:\clion\CLion 2021.3\bin\mingw\bin\gcc.exe" $FLAGS $LINK_FLAGS $in -o $TARGET_FILE -Wl,--out-implib,$TARGET_IMPLIB -Wl,--major-image-version,0,--minor-image-version,0 $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
+rule C_EXECUTABLE_LINKER__project_Debug
+  command = cmd.exe /C "$PRE_LINK && D:\MinGW\bin\gcc.exe $FLAGS $LINK_FLAGS $in -o $TARGET_FILE -Wl,--out-implib,$TARGET_IMPLIB -Wl,--major-image-version,0,--minor-image-version,0 $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
   description = Linking C executable $TARGET_FILE
   restat = $RESTAT
 

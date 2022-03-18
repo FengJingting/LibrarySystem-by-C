@@ -1,11 +1,17 @@
 # ninja log v5
-51	711	6684545709412766	CMakeFiles/cw3.dir/reg_or_login.c.obj	f55f87c4f0c1e5fe
-27	501	6684545707083058	CMakeFiles/cw3.dir/main.c.obj	ddb59bfd0e6bca63
-33	609	6684545708332802	CMakeFiles/cw3.dir/utility.c.obj	a22dfbbeb13be938
-45	613	6684545708372679	CMakeFiles/cw3.dir/library.c.obj	374ec1e479cf9e02
-18	567	6684545707861594	CMakeFiles/cw3.dir/user.c.obj	6da7493c6156014d
-39	498	6684545706992584	CMakeFiles/cw3.dir/librarian.c.obj	4709ff683dcc44fc
-6	377	6684547441142611	build.ninja	aafd5c871541c31f
-62	523	6684545707163876	CMakeFiles/cw3.dir/search_for_books.c.obj	1bb347c7d7a4e3e9
-69	587	6684545708081799	CMakeFiles/cw3.dir/test.c.obj	667bb4c6c880a685
-5	190	6684546331184817	CMakeFiles/cw3.dir/libararian.c.obj	926bf1263fc7b4c2
+1	285	6693137707603102	CMakeFiles/project.dir/main.c.obj	f7274a960eac1f76
+4	300	6693137707752709	CMakeFiles/project.dir/librarian.c.obj	6f16c298eafbb8a9
+242	471	6693176524797456	project.exe	60f99ec6114ea7c7
+6	292	6693137707682892	CMakeFiles/project.dir/library.c.obj	848c4f6c5a1fdfd2
+14	367	6691804897050242	CMakeFiles/project.dir/utility.c.obj	4d5719fbdec93ea7
+13	302	6693137707782634	CMakeFiles/project.dir/reg_or_login.c.obj	951d532552bedab9
+9	299	6693137707742731	CMakeFiles/project.dir/search_for_books.c.obj	41f0f333216b69f
+1	242	6693176522573734	CMakeFiles/project.dir/user.c.obj	3c8e850bd40889d1
+13	320	6693181370857879	CMakeFiles/project.dir/utility.c.obj	929c326c09983e4d
+1	321	6693181370887803	CMakeFiles/project.dir/main.c.obj	56df7f8d6709f4b
+5	335	6693181371017463	CMakeFiles/project.dir/library.c.obj	2af3a3748c6e0990
+17	338	6693181371047383	CMakeFiles/project.dir/user.c.obj	20f0cd3e53d15de7
+15	339	6693181371057354	CMakeFiles/project.dir/librarian.c.obj	e70c5654d51099b
+7	340	6693181371077295	CMakeFiles/project.dir/search_for_books.c.obj	46a196fd5b3fd488
+11	343	6693181371117187	CMakeFiles/project.dir/reg_or_login.c.obj	bf5fb3029f5c2495
+343	557	6693181373191637	project.exe	60f99ec6114ea7c7

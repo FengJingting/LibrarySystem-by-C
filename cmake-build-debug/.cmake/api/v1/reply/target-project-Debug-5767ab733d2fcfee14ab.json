@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "cw1.exe"
+			"path" : "project.exe"
 		},
 		{
-			"path" : "cw1.pdb"
+			"path" : "project.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -56,18 +56,16 @@
 			"sourceIndexes" : 
 			[
 				0,
+				1,
 				4,
-				5,
 				6,
-				7,
-				9,
-				11,
-				14,
-				15
+				8,
+				10,
+				12
 			]
 		}
 	],
-	"id" : "cw1::@6890427a1f51a3e7e1df",
+	"id" : "project::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -87,8 +85,8 @@
 		],
 		"language" : "C"
 	},
-	"name" : "cw1",
-	"nameOnDisk" : "cw1.exe",
+	"name" : "project",
+	"nameOnDisk" : "project.exe",
 	"paths" : 
 	{
 		"build" : ".",
@@ -101,28 +99,25 @@
 			"sourceIndexes" : 
 			[
 				0,
+				1,
 				4,
-				5,
 				6,
-				7,
-				9,
-				11,
-				14,
-				15
+				8,
+				10,
+				12
 			]
 		},
 		{
 			"name" : "Header Files",
 			"sourceIndexes" : 
 			[
-				1,
 				2,
 				3,
-				8,
-				10,
-				12,
-				13,
-				16
+				5,
+				7,
+				9,
+				11,
+				13
 			]
 		}
 	],
@@ -136,36 +131,19 @@
 		},
 		{
 			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "library.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
 			"path" : "library.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
-			"path" : "user.h",
+			"path" : "book_management.h",
 			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"path" : "utility.h",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "user.c",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "utility.c",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "library.c",
-			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
@@ -176,6 +154,17 @@
 		{
 			"backtrace" : 1,
 			"path" : "librarian.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "utility.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "utility.h",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -202,24 +191,13 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "book_management.h",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "test.c",
+			"path" : "user.c",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "libararian.c",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"path" : "libararian.h",
+			"path" : "user.h",
 			"sourceGroupIndex" : 1
 		}
 	],

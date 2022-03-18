@@ -1,5 +1,6 @@
 #include "reg_or_login.h"
 #include "book_management.h"
+#include "utility.h"
 #include <stdio.h>
 #include <malloc.h>
 #include <string.h>
@@ -32,20 +33,14 @@ pNode createList()
             free(temp);
             break;
         }
-
-        //让当前节点(链表的尾部)的后面加上读取到数据的节点
         cur->next=temp;
-
-        //让当前的节点为链表尾部
         cur = temp;
-
-        //使最后一个节点指向空，方便以后判断
         cur->next = NULL;
     }
     return pHead;
 }
 
-//登录函数
+//login
 int login(pNode head)
 {
     // If there are no data in user.txt
@@ -73,7 +68,6 @@ int login(pNode head)
                 return 2;
             }
             return 1;
-
         }
         temp = temp->next;
     }
@@ -82,7 +76,7 @@ int login(pNode head)
 
 }
 
-//写入txt文件，每一行存在一个用户
+
 void writeToFile(pNode head)
 {
     FILE *fw = fopen("user.txt","a+");
@@ -103,11 +97,11 @@ void writeToFile(pNode head)
 }
 
 
-//注册用户
+
 int registerUser(pNode head)
 {
     pNode temp = head->next;
-    //当表中无用户直接在头结点后注册
+
     char name[20];
     char username[20];
     char pass[20];
@@ -148,23 +142,21 @@ int registerUser(pNode head)
     return 1;
 }
 
-int menu()
-{
-    int choice;
+void menu() {
     printf("\n1.login\n");
     printf("2.register\n");
     printf("3.exit\n");
     printf("enter your choice:");
-    scanf("%d",&choice);
-    return choice;
 }
+
 int reg_or_login()
 {
     int choice;
     pNode head = createList();
     while(1)
     {
-        choice = menu();
+        menu();
+        choice  = optionChoice();
         if(1==choice)
         {
             int y = login(head);
@@ -176,14 +168,10 @@ int reg_or_login()
         }
         else if(2==choice)
         {
-
             int x = registerUser(head);
             if(x==1){
-                printf(" writeToFile");
                 writeToFile(head);
             }
-
-
         }
         else if(3==choice)
         {

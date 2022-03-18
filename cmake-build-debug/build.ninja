@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: cw1
+# Project: project
 # Configurations: Debug
 # =============================================================================
 
@@ -41,85 +41,88 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = C$:/Users/udii/Desktop/C/cw1/lussiano.github.io/cmake-build-debug/
 # =============================================================================
-# Object build statements for EXECUTABLE target cw1
+# Object build statements for EXECUTABLE target project
 
 
 #############################################
-# Order-only phony target for cw1
+# Order-only phony target for project
 
-build cmake_object_order_depends_target_cw1: phony || CMakeFiles/cw1.dir
+build cmake_object_order_depends_target_project: phony || CMakeFiles/project.dir
 
-build CMakeFiles/cw1.dir/main.c.obj: C_COMPILER__cw1_Debug C$:/Users/udii/Desktop/C/cw1/lussiano.github.io/main.c || cmake_object_order_depends_target_cw1
-  DEP_FILE = CMakeFiles\cw1.dir\main.c.obj.d
+build CMakeFiles/project.dir/main.c.obj: C_COMPILER__project_Debug C$:/Users/udii/Desktop/C/cw1/lussiano.github.io/main.c || cmake_object_order_depends_target_project
+  DEP_FILE = CMakeFiles\project.dir\main.c.obj.d
   FLAGS = -g -std=gnu99
-  OBJECT_DIR = CMakeFiles\cw1.dir
-  OBJECT_FILE_DIR = CMakeFiles\cw1.dir
+  OBJECT_DIR = CMakeFiles\project.dir
+  OBJECT_FILE_DIR = CMakeFiles\project.dir
+  TARGET_COMPILE_PDB = CMakeFiles\project.dir\
+  TARGET_PDB = project.pdb
 
-build CMakeFiles/cw1.dir/user.c.obj: C_COMPILER__cw1_Debug C$:/Users/udii/Desktop/C/cw1/lussiano.github.io/user.c || cmake_object_order_depends_target_cw1
-  DEP_FILE = CMakeFiles\cw1.dir\user.c.obj.d
+build CMakeFiles/project.dir/library.c.obj: C_COMPILER__project_Debug C$:/Users/udii/Desktop/C/cw1/lussiano.github.io/library.c || cmake_object_order_depends_target_project
+  DEP_FILE = CMakeFiles\project.dir\library.c.obj.d
   FLAGS = -g -std=gnu99
-  OBJECT_DIR = CMakeFiles\cw1.dir
-  OBJECT_FILE_DIR = CMakeFiles\cw1.dir
+  OBJECT_DIR = CMakeFiles\project.dir
+  OBJECT_FILE_DIR = CMakeFiles\project.dir
+  TARGET_COMPILE_PDB = CMakeFiles\project.dir\
+  TARGET_PDB = project.pdb
 
-build CMakeFiles/cw1.dir/utility.c.obj: C_COMPILER__cw1_Debug C$:/Users/udii/Desktop/C/cw1/lussiano.github.io/utility.c || cmake_object_order_depends_target_cw1
-  DEP_FILE = CMakeFiles\cw1.dir\utility.c.obj.d
+build CMakeFiles/project.dir/librarian.c.obj: C_COMPILER__project_Debug C$:/Users/udii/Desktop/C/cw1/lussiano.github.io/librarian.c || cmake_object_order_depends_target_project
+  DEP_FILE = CMakeFiles\project.dir\librarian.c.obj.d
   FLAGS = -g -std=gnu99
-  OBJECT_DIR = CMakeFiles\cw1.dir
-  OBJECT_FILE_DIR = CMakeFiles\cw1.dir
+  OBJECT_DIR = CMakeFiles\project.dir
+  OBJECT_FILE_DIR = CMakeFiles\project.dir
+  TARGET_COMPILE_PDB = CMakeFiles\project.dir\
+  TARGET_PDB = project.pdb
 
-build CMakeFiles/cw1.dir/library.c.obj: C_COMPILER__cw1_Debug C$:/Users/udii/Desktop/C/cw1/lussiano.github.io/library.c || cmake_object_order_depends_target_cw1
-  DEP_FILE = CMakeFiles\cw1.dir\library.c.obj.d
+build CMakeFiles/project.dir/utility.c.obj: C_COMPILER__project_Debug C$:/Users/udii/Desktop/C/cw1/lussiano.github.io/utility.c || cmake_object_order_depends_target_project
+  DEP_FILE = CMakeFiles\project.dir\utility.c.obj.d
   FLAGS = -g -std=gnu99
-  OBJECT_DIR = CMakeFiles\cw1.dir
-  OBJECT_FILE_DIR = CMakeFiles\cw1.dir
+  OBJECT_DIR = CMakeFiles\project.dir
+  OBJECT_FILE_DIR = CMakeFiles\project.dir
+  TARGET_COMPILE_PDB = CMakeFiles\project.dir\
+  TARGET_PDB = project.pdb
 
-build CMakeFiles/cw1.dir/librarian.c.obj: C_COMPILER__cw1_Debug C$:/Users/udii/Desktop/C/cw1/lussiano.github.io/librarian.c || cmake_object_order_depends_target_cw1
-  DEP_FILE = CMakeFiles\cw1.dir\librarian.c.obj.d
+build CMakeFiles/project.dir/reg_or_login.c.obj: C_COMPILER__project_Debug C$:/Users/udii/Desktop/C/cw1/lussiano.github.io/reg_or_login.c || cmake_object_order_depends_target_project
+  DEP_FILE = CMakeFiles\project.dir\reg_or_login.c.obj.d
   FLAGS = -g -std=gnu99
-  OBJECT_DIR = CMakeFiles\cw1.dir
-  OBJECT_FILE_DIR = CMakeFiles\cw1.dir
+  OBJECT_DIR = CMakeFiles\project.dir
+  OBJECT_FILE_DIR = CMakeFiles\project.dir
+  TARGET_COMPILE_PDB = CMakeFiles\project.dir\
+  TARGET_PDB = project.pdb
 
-build CMakeFiles/cw1.dir/reg_or_login.c.obj: C_COMPILER__cw1_Debug C$:/Users/udii/Desktop/C/cw1/lussiano.github.io/reg_or_login.c || cmake_object_order_depends_target_cw1
-  DEP_FILE = CMakeFiles\cw1.dir\reg_or_login.c.obj.d
+build CMakeFiles/project.dir/search_for_books.c.obj: C_COMPILER__project_Debug C$:/Users/udii/Desktop/C/cw1/lussiano.github.io/search_for_books.c || cmake_object_order_depends_target_project
+  DEP_FILE = CMakeFiles\project.dir\search_for_books.c.obj.d
   FLAGS = -g -std=gnu99
-  OBJECT_DIR = CMakeFiles\cw1.dir
-  OBJECT_FILE_DIR = CMakeFiles\cw1.dir
+  OBJECT_DIR = CMakeFiles\project.dir
+  OBJECT_FILE_DIR = CMakeFiles\project.dir
+  TARGET_COMPILE_PDB = CMakeFiles\project.dir\
+  TARGET_PDB = project.pdb
 
-build CMakeFiles/cw1.dir/search_for_books.c.obj: C_COMPILER__cw1_Debug C$:/Users/udii/Desktop/C/cw1/lussiano.github.io/search_for_books.c || cmake_object_order_depends_target_cw1
-  DEP_FILE = CMakeFiles\cw1.dir\search_for_books.c.obj.d
+build CMakeFiles/project.dir/user.c.obj: C_COMPILER__project_Debug C$:/Users/udii/Desktop/C/cw1/lussiano.github.io/user.c || cmake_object_order_depends_target_project
+  DEP_FILE = CMakeFiles\project.dir\user.c.obj.d
   FLAGS = -g -std=gnu99
-  OBJECT_DIR = CMakeFiles\cw1.dir
-  OBJECT_FILE_DIR = CMakeFiles\cw1.dir
-
-build CMakeFiles/cw1.dir/test.c.obj: C_COMPILER__cw1_Debug C$:/Users/udii/Desktop/C/cw1/lussiano.github.io/test.c || cmake_object_order_depends_target_cw1
-  DEP_FILE = CMakeFiles\cw1.dir\test.c.obj.d
-  FLAGS = -g -std=gnu99
-  OBJECT_DIR = CMakeFiles\cw1.dir
-  OBJECT_FILE_DIR = CMakeFiles\cw1.dir
-
-build CMakeFiles/cw1.dir/libararian.c.obj: C_COMPILER__cw1_Debug C$:/Users/udii/Desktop/C/cw1/lussiano.github.io/libararian.c || cmake_object_order_depends_target_cw1
-  DEP_FILE = CMakeFiles\cw1.dir\libararian.c.obj.d
-  FLAGS = -g -std=gnu99
-  OBJECT_DIR = CMakeFiles\cw1.dir
-  OBJECT_FILE_DIR = CMakeFiles\cw1.dir
+  OBJECT_DIR = CMakeFiles\project.dir
+  OBJECT_FILE_DIR = CMakeFiles\project.dir
+  TARGET_COMPILE_PDB = CMakeFiles\project.dir\
+  TARGET_PDB = project.pdb
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target cw1
+# Link build statements for EXECUTABLE target project
 
 
 #############################################
-# Link the executable cw1.exe
+# Link the executable project.exe
 
-build cw1.exe: C_EXECUTABLE_LINKER__cw1_Debug CMakeFiles/cw1.dir/main.c.obj CMakeFiles/cw1.dir/user.c.obj CMakeFiles/cw1.dir/utility.c.obj CMakeFiles/cw1.dir/library.c.obj CMakeFiles/cw1.dir/librarian.c.obj CMakeFiles/cw1.dir/reg_or_login.c.obj CMakeFiles/cw1.dir/search_for_books.c.obj CMakeFiles/cw1.dir/test.c.obj CMakeFiles/cw1.dir/libararian.c.obj
+build project.exe: C_EXECUTABLE_LINKER__project_Debug CMakeFiles/project.dir/main.c.obj CMakeFiles/project.dir/library.c.obj CMakeFiles/project.dir/librarian.c.obj CMakeFiles/project.dir/utility.c.obj CMakeFiles/project.dir/reg_or_login.c.obj CMakeFiles/project.dir/search_for_books.c.obj CMakeFiles/project.dir/user.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\cw1.dir
+  OBJECT_DIR = CMakeFiles\project.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_FILE = cw1.exe
-  TARGET_IMPLIB = libcw1.dll.a
-  TARGET_PDB = cw1.exe.dbg
+  TARGET_COMPILE_PDB = CMakeFiles\project.dir\
+  TARGET_FILE = project.exe
+  TARGET_IMPLIB = libproject.dll.a
+  TARGET_PDB = project.pdb
 
 
 #############################################
@@ -147,7 +150,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
-build cw1: phony cw1.exe
+build project: phony project.exe
 
 # =============================================================================
 # Folder targets.
@@ -157,7 +160,7 @@ build cw1: phony cw1.exe
 #############################################
 # Folder: C:/Users/udii/Desktop/C/cw1/lussiano.github.io/cmake-build-debug
 
-build all: phony cw1.exe
+build all: phony project.exe
 
 # =============================================================================
 # Built-in targets
@@ -166,14 +169,14 @@ build all: phony cw1.exe
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ../CMakeLists.txt CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeRCCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeCInformation.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeGenericSystem.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeRCInformation.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/GNU-C.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/GNU.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-C-ABI.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-C.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-windres.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/WindowsPaths.cmake
+build build.ninja: RERUN_CMAKE | ../CMakeLists.txt CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeRCCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeCCompiler.cmake.in D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeCCompilerABI.c D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeCInformation.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeCompilerIdDetection.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeDetermineCCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeDetermineCompileFeatures.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeDetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeDetermineCompilerABI.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeDetermineCompilerId.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeDetermineRCCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeDetermineSystem.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeFindBinUtils.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeGenericSystem.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeParseImplicitIncludeInfo.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeParseImplicitLinkInfo.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeParseLibraryArchitecture.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeRCCompiler.cmake.in D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeRCInformation.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeSystem.cmake.in D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeTestCCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeTestCompilerCommon.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeTestRCCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/ADSP-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/ARMCC-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/ARMClang-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/AppleClang-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/Borland-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/Bruce-C-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/Clang-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/Clang-DetermineCompilerInternal.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/Compaq-C-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/Cray-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/Embarcadero-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/Fujitsu-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/GHS-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/GNU-C-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/GNU-C.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/GNU-FindBinUtils.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/GNU.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/HP-C-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/IAR-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/Intel-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/MSVC-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/NVHPC-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/NVIDIA-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/PGI-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/PathScale-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/ROCMClang-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/SCO-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/SDCC-C-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/SunPro-C-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/TI-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/Watcom-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/XL-C-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/XLClang-C-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/zOS-C-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Internal/FeatureTesting.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-C-ABI.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-C.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-windres.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/WindowsPaths.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ../CMakeLists.txt CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeRCCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeCInformation.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeGenericSystem.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeRCInformation.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/GNU-C.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/GNU.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-C-ABI.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-C.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-windres.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/WindowsPaths.cmake: phony
+build ../CMakeLists.txt CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeRCCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeCCompiler.cmake.in D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeCCompilerABI.c D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeCInformation.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeCompilerIdDetection.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeDetermineCCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeDetermineCompileFeatures.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeDetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeDetermineCompilerABI.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeDetermineCompilerId.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeDetermineRCCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeDetermineSystem.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeFindBinUtils.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeGenericSystem.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeParseImplicitIncludeInfo.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeParseImplicitLinkInfo.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeParseLibraryArchitecture.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeRCCompiler.cmake.in D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeRCInformation.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeSystem.cmake.in D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeTestCCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeTestCompilerCommon.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeTestRCCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/ADSP-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/ARMCC-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/ARMClang-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/AppleClang-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/Borland-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/Bruce-C-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/Clang-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/Clang-DetermineCompilerInternal.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/Compaq-C-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/Cray-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/Embarcadero-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/Fujitsu-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/GHS-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/GNU-C-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/GNU-C.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/GNU-FindBinUtils.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/GNU.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/HP-C-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/IAR-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/Intel-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/MSVC-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/NVHPC-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/NVIDIA-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/PGI-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/PathScale-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/ROCMClang-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/SCO-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/SDCC-C-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/SunPro-C-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/TI-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/Watcom-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/XL-C-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/XLClang-C-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/zOS-C-DetermineCompiler.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Internal/FeatureTesting.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-C-ABI.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-C.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-windres.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows.cmake D$:/clion/CLion$ 2021.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/WindowsPaths.cmake: phony
 
 
 #############################################

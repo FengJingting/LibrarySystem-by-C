@@ -29,7 +29,7 @@ void find_book_by_author(const char *authors,pBook head){
     pBook book = head->next;
     while (book!=NULL)
     {
-        if (strcmp(book->title,authors)!=0)
+        if (strcmp(book->authors,authors)!=0)
         {
             book = book->next;
         }
@@ -95,8 +95,9 @@ void search_for_books(pBook head){
         }
         else if(2==choice)
         {
-            char authors[20];
+            const char authors[20];
             printf("\n1.Please enter authors:\n");
+
             scanf("%s",authors);
             find_book_by_author (authors,head);
         }
@@ -104,7 +105,7 @@ void search_for_books(pBook head){
         {
             unsigned int year;
             printf("\n1.Please enter year:\n");
-            scanf("%s",year);
+            scanf("%u",&year);
             find_book_by_year(year,head);
         }
         else if(4==choice)
