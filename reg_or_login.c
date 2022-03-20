@@ -156,7 +156,8 @@ int reg_or_login()
     while(1)
     {
         menu();
-        choice  = optionChoice();
+        scanf("%d",&choice);
+//        choice  = optionChoice();
         if(1==choice)
         {
             int y = login(head);

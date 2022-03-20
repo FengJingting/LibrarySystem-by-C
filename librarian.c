@@ -33,10 +33,17 @@ int add_book(pBook head)
         while(temp)
         {
             bookNum ++ ;
-            if(temp->title == title)
+            if(0 == (strcmp(temp->title,title)) && 0 == (strcmp(temp->authors,authors)) && temp->year == year)
             {
-                printf("Book already exits.");
-                return 0;
+                printf("\nBook already exits,do you want to add copies based on it?\n 1 Yes\n 2 No\nEnter your choice:");
+                int option;
+                scanf("%d",&option);
+                if (1==option){
+                    temp->copies += copies;
+                    return 1;
+                }else{
+                    return 0;
+                }
             }
             temp = temp->next;
         }

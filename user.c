@@ -37,15 +37,6 @@ int display_Borrowed_book(pBook BorrowHead){
             Borrowtemp = Borrowtemp->next;
         }
     }
-
-//    pBook temp = head->next;
-
-//    while(temp)
-//    {
-
-//
-//        temp = temp->next;
-//    }
     return 1;
 }
 int add_Borrowed_book(pBook head,pBook BorrowHead)
@@ -54,17 +45,22 @@ int add_Borrowed_book(pBook head,pBook BorrowHead)
     pBook Borrowtemp = BorrowHead->next;
     unsigned int id;
     printf("Enter the ID of the book you wish to add:");
-
     scanf("%u",&id);
-//    if (id<=0 ){
-//        printf("ID error.");
-//        return 0;
-//    }
-//    int bookNum = 0;
-//    while(Borrowtemp){
-//        bookNum ++ ;
-//        Borrowtemp = Borrowtemp->next;
-//    }
+    //  if the id is valid
+    if (id<=0 ){
+        printf("Invalid ID.\n");
+        return 0;
+    }
+    int numBorrow = 0;
+    while(Borrowtemp){
+        numBorrow += Borrowtemp->copies ;
+        Borrowtemp = Borrowtemp->next;
+    }
+    if (numBorrow == 10){
+        printf("Max borrowed Num:10;Please return some book before borrow again.\n");
+        return 0;
+    }
+    Borrowtemp = BorrowHead->next;
 
 while(temp)
         {
@@ -72,7 +68,7 @@ while(temp)
             {
                 //   if copies of book is 0
                 if(temp->copies == 0){
-                    printf("No book can be borrowed,you can come next time.");
+                    printf("This book can't be borrowed,you can come next time.\n");
                     return 0;
                 }else{
                     temp->copies --;
@@ -114,6 +110,7 @@ while(temp)
             }
         temp = temp->next;
         }
+    printf("Invalid ID.\n");
     return 0;
 }
 
@@ -123,7 +120,10 @@ int remove_Borrowed_book(pBook Borrowhead){
     unsigned int id;
     printf("Enter the id of the book you wish to return:");
     scanf("%u",&id);
-    pBook p;
+    if(id<=0){
+        printf("Invalid id.");
+        return 0;
+    }
     if(!temp)
     {
         printf("You haven't borrow a book!");
@@ -146,10 +146,8 @@ int remove_Borrowed_book(pBook Borrowhead){
 
         }
     }
-    printf("Book doesn't exist!");
+    printf("Invalid id.");
     return 0;
-
-
 };
 
 
@@ -170,7 +168,7 @@ void store_borrowed_books(pBook head){
 int Book_Borrowed_Menu()
 {
     int choice;
-    printf("\nUser Menu\n");
+    printf("\nUser Menu");
     printf("\n1.Borrow a book\n");
     printf("2.Return a book\n");
     printf("3.Search for books\n");

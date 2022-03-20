@@ -78,6 +78,7 @@ void main_menu() {
 
     while (libraryOpen) {
         printf("\n Main menu options\n 1 Register an account or login\n 2 Display all books\n 3 Quit\n Choice:");
+//        option = optionChoice();
         scanf("%d",&option);
         if(option == 1)
         {
@@ -87,17 +88,16 @@ void main_menu() {
 //                printf(" user_login");
 //                  user_login(head);
 //            }else if(x==2) {
-//                librarian_login(fw,head);
+//                librarian_login(head);
 //            }else{
 //                continue;
 //            }
         } else if (option == 2) {
-            user_login(head);
-//            display_book(head);
+            display_book(head);
         } else if (option == 3) {
             libraryOpen = 0;
             printf("\nClosing\n");
-        } else{
+        }else{
             printf("\nUnknown option\n");
         }
     }
