@@ -1,7 +1,7 @@
 #ifndef BOOK_MANAGEMENT_GUARD__H
 #define BOOK_MANAGEMENT_GUARD__H
 #include <stdio.h>
-int numBooks;
+
 
 /*You can extend the structs (Book and BookList) defined in this head file;
   However, you may not change the function prototypes.

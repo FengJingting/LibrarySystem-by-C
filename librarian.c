@@ -56,28 +56,35 @@ int add_book(pBook head)
     temp->year = year;
     temp->copies = copies;
     temp->next=NULL;
+//    free(temp);
     return 1;
 }
 
 int remove_book(pBook head){
     pBook temp = head->next;
     pBook tail = head;
-    char title[20];
-    printf("Enter the title of the book you wish to remove:");
-    scanf("%s",title);
+    unsigned int id;
+    printf("Enter the id of the book you wish to remove:");
+    scanf("%u",&id);
     pBook p;
     if(!temp)
     {
         printf("There are no book in the library!");
     }else {
         while (temp) {
-            if (strcmp(temp->title,title) != 0) {
+            if (temp->id == id) {
+                if (temp->copies == 0){
+                    temp = temp->next;
+                    tail->next = temp;
+
+                }else{
+                    temp->copies -- ;
+
+                }
+                return 1;
+            }else{
                 temp = temp->next;
                 tail = tail->next;
-            }else{
-                tail->next = temp->next;
-                free(temp);
-                return 1;
             }
 
         }
@@ -97,6 +104,7 @@ void store_books(pBook head){
         fprintf(fw,"%u\t%s\t%s\t%u\t%u\n", temp->id, temp->title, temp->authors, temp->year, temp->copies);
         temp  = temp->next;
     }
+    free(temp);
     fclose(fw);
 }
 
@@ -118,6 +126,7 @@ void librarian_login(pBook head){
         }
         else if(2==choice)
         {
+            display_book(head);
             int x = remove_book(head);
             if(x==1){
                 printf("Successfully remove book!\n");
