@@ -26,7 +26,6 @@ void load_books(FILE *file,pBook pHead){
     // if the pointer is at the end of the file,break
         if(5!=fscanf(file,"%u\t%s\t%s\t%u\t%u\n",&temp->id,&temp->title,&temp->authors,&temp->year,&temp->copies))
         {
-//            printf("%d",fscanf(file,"%u\t%s\t%s\t%u\t%u\n",&(temp->id),&temp->title,&temp->authors,&temp->year,&temp->copies));
             free(temp);
             break;
         }
@@ -78,26 +77,24 @@ void main_menu() {
 
     while (libraryOpen) {
         printf("\n Main menu options\n 1 Register an account or login\n 2 Display all books\n 3 Quit\n Choice:");
-//        option = optionChoice();
         scanf("%d",&option);
         if(option == 1)
         {
-            librarian_login(head);
-//            int x = reg_or_login();
-//            if(x==1){
-//                printf(" user_login");
-//                  user_login(head);
-//            }else if(x==2) {
-//                librarian_login(head);
-//            }else{
-//                continue;
-//            }
+            int x = reg_or_login();
+            if(x==1){
+                  user_login(head);
+            }else if(x==2) {
+                librarian_login(head);
+            }else{
+                continue;
+            }
         } else if (option == 2) {
             display_book(head);
         } else if (option == 3) {
             libraryOpen = 0;
             printf("\nClosing\n");
         }else{
+            fflush(stdin);
             printf("\nUnknown option\n");
         }
     }

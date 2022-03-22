@@ -67,13 +67,4 @@ typedef struct LNode
     char pass[20];
     struct LNode *next;
 } LNode,*pNode;
-
-typedef struct BorrowedBook {
-    unsigned int id; //Book ID
-    char title[20]; //book title
-    char authors[20]; //comma separated list of authors
-    unsigned int year; // year of publication
-    unsigned int copies; //number of copies the library has
-    struct _Book *next; //pointer to the next book element
-}BorrowedBook,*bBook;
 #endif

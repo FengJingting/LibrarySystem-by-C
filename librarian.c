@@ -83,10 +83,16 @@ int remove_book(pBook head){
                 if (temp->copies == 0){
                     temp = temp->next;
                     tail->next = temp;
+                    temp = head->next;
+                    int num=1;
+                    while(temp){
+                        temp->id = num;
+                        num++;
+                        temp = temp->next;
+                    }
 
                 }else{
                     temp->copies -- ;
-
                 }
                 return 1;
             }else{
@@ -158,6 +164,7 @@ void librarian_login(pBook head){
         }
         else
         {
+            fflush(stdin);
             printf("Invalid Choice");
 
         }

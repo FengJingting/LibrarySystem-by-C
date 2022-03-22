@@ -133,6 +133,13 @@ int remove_Borrowed_book(pBook Borrowhead){
                 if (temp->copies == 1){
                     temp = temp->next;
                     tail->next = temp;
+                    temp = Borrowhead->next;
+                    int num=1;
+                    while(temp){
+                        temp->id = num;
+                        num++;
+                        temp = temp->next;
+                    }
 
                 }else{
                     temp->copies -- ;
@@ -237,6 +244,7 @@ void user_login(pBook head){
         }
         else
         {
+            fflush(stdin);
             printf("Invalid Choice");
         }
     }

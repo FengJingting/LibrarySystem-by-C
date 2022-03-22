@@ -111,7 +111,9 @@ void search_for_books(pBook head){
         }
         else
         {
+            fflush(stdin);
             printf("Invalid Choice");
+
         }
     }
 
