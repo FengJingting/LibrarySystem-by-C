@@ -73,7 +73,7 @@ int Search_Menu()
     printf("2.Find books by author\n");
     printf("3.Find books by year\n");
     printf("4.Return to previous menu\n");
-    printf("enter your choice:\n");
+    printf("enter your choice:");
     scanf("%d",&choice);
     return choice;
 }
@@ -111,7 +111,7 @@ void search_for_books(pBook head){
         }
         else
         {
-            fflush(stdin);
+            clear();
             printf("Invalid Choice");
 
         }

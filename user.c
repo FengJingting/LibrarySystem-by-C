@@ -101,6 +101,10 @@ while(temp)
 
                 }
                 Borrowtemp->id = num;
+                char title[100];
+                char authors[100];
+                Borrowtemp->title = (char*)malloc(sizeof(strlen(title)));
+                Borrowtemp->authors = (char*)malloc(sizeof(strlen(authors)));
                 strcpy(Borrowtemp->title,temp->title);
                 strcpy(Borrowtemp->authors,temp->authors);
                 Borrowtemp->year = temp->year;
@@ -244,7 +248,7 @@ void user_login(pBook head){
         }
         else
         {
-            fflush(stdin);
+            clear();
             printf("Invalid Choice");
         }
     }

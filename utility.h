@@ -1,1 +1,1 @@
-int optionChoice( void );
+void clear(void);

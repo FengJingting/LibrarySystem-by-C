@@ -5,7 +5,8 @@
 #include "user.h"
 #include "reg_or_login.h"
 #include <stdio.h>
-#include <malloc.h>
+#include <stdlib.h>
+#include <string.h>
 
 //create library list node
 pBook create_Book_List()
@@ -20,19 +21,27 @@ pBook create_Book_List()
 void load_books(FILE *file,pBook pHead){
 //     initialize head node
         pBook cur = pHead;
+        char title[100];
+        char authors[100];
     while(1)
     {
         pBook temp = (pBook)malloc(sizeof(Book));
-    // if the pointer is at the end of the file,break
-        if(5!=fscanf(file,"%u\t%s\t%s\t%u\t%u\n",&temp->id,&temp->title,&temp->authors,&temp->year,&temp->copies))
+
+
+        // if the pointer is at the end of the file,break
+        if(5!=fscanf(file,"%u\t%s\t%s\t%u\t%u\n",&temp->id,title,authors,&temp->year,&temp->copies))
         {
             free(temp);
             break;
+        }else{
+            temp->title = (char*)malloc(sizeof(strlen(title)));
+            temp->authors = (char*)malloc(sizeof(strlen(authors)));
+            strcpy(temp->title,title);
+            strcpy(temp->authors,authors);
+            cur->next=temp;
+            cur = temp;
+            cur->next = NULL;
         }
-        cur->next=temp;
-        cur = temp;
-        cur->next = NULL;
-
     }
     fclose(file);
 }
@@ -94,7 +103,7 @@ void main_menu() {
             libraryOpen = 0;
             printf("\nClosing\n");
         }else{
-            fflush(stdin);
+            clear();
             printf("\nUnknown option\n");
         }
     }

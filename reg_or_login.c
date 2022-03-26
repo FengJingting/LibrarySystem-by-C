@@ -180,7 +180,7 @@ int reg_or_login()
         }
         else
         {
-            fflush(stdin);
+            clear();
             printf("Invalid Choice");
         }
     }

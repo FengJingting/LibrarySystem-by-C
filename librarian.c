@@ -10,13 +10,18 @@
 int add_book(pBook head)
 {
     pBook temp = head->next;
-    char title[20];
-    char authors[20];
+    char title[100];
+    char authors[100];
     unsigned int year;
     unsigned int copies;
     printf("Enter the title of the book you wish to add:");
     scanf("\n");
-    gets(title);
+    fgets(title,30,stdin);
+    if( title[ strlen(title) - 1 ] == '\n' )
+    {
+        title[ strlen(title) - 1] = '\0';
+    }
+
     printf("Enter the author of the book you wish to add:");
     scanf("%s",authors);
     printf("Enter the year of the book you wish to add was released:");
@@ -38,10 +43,15 @@ int add_book(pBook head)
                 printf("\nBook already exits,do you want to add copies based on it?\n 1 Yes\n 2 No\nEnter your choice:");
                 int option;
                 scanf("%d",&option);
+                printf("%d",option);
                 if (1==option){
                     temp->copies += copies;
                     return 1;
+                }else if(2==option){
+                    return 0;
                 }else{
+                    printf("Invalid Choice!");
+                    clear();
                     return 0;
                 }
             }
@@ -58,6 +68,8 @@ int add_book(pBook head)
         temp = last;
     }
     temp->id = bookNum;
+    temp->title = (char*)malloc(sizeof(strlen(title)));
+    temp->authors = (char*)malloc(sizeof(strlen(authors)));
     strcpy(temp->title,title);
     strcpy(temp->authors,authors);
     temp->year = year;
@@ -73,14 +85,16 @@ int remove_book(pBook head){
     unsigned int id;
     printf("Enter the id of the book you wish to remove:");
     scanf("%u",&id);
-    pBook p;
     if(!temp)
     {
         printf("There are no book in the library!");
     }else {
         while (temp) {
             if (temp->id == id) {
-                if (temp->copies == 0){
+                printf("You want\n1.Remove all the copies\n2.Remove one copy ");
+                int choice;
+                scanf("%d",&choice);
+                if(choice == 1){
                     temp = temp->next;
                     tail->next = temp;
                     temp = head->next;
@@ -90,10 +104,23 @@ int remove_book(pBook head){
                         num++;
                         temp = temp->next;
                     }
-
                 }else{
-                    temp->copies -- ;
+                    if (temp->copies == 1){
+                        temp = temp->next;
+                        tail->next = temp;
+                        temp = head->next;
+                        int num=1;
+                        while(temp){
+                            temp->id = num;
+                            num++;
+                            temp = temp->next;
+                        }
+
+                    }else{
+                        temp->copies -- ;
+                    }
                 }
+
                 return 1;
             }else{
                 temp = temp->next;
@@ -135,6 +162,8 @@ void librarian_login(pBook head){
             if(x==1){
                 printf("Successfully add book!\n");
                 display_book(head);
+            }else{
+
             }
         }
         else if(2==choice)
@@ -164,7 +193,7 @@ void librarian_login(pBook head){
         }
         else
         {
-            fflush(stdin);
+            clear();
             printf("Invalid Choice");
 
         }
