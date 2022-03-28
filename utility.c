@@ -13,4 +13,3 @@ void clear(void)
     while(b !='\n');
 }
 
-}

@@ -8,7 +8,9 @@
 #include <malloc.h>
 #include <string.h>
 #include <stdlib.h>
+#include "utility.h"
 
+// create borrowed book list
 pBook create_BorrowedBook_List()
 {
     // initialize head node
@@ -16,7 +18,10 @@ pBook create_BorrowedBook_List()
     pBorrowHead->next=NULL;
     return pBorrowHead;
 }
-int display_Borrowed_book(pBook BorrowHead){
+
+// diplay books user have borrowed
+int display_Borrowed_book(BookList *theBorrowBookList){
+    pBook BorrowHead = theBorrowBookList->list;
     if(NULL==BorrowHead->next)
     {
         printf("No book in your bookcase!\n");
@@ -39,8 +44,10 @@ int display_Borrowed_book(pBook BorrowHead){
     }
     return 1;
 }
-int add_Borrowed_book(pBook head,pBook BorrowHead)
+int add_Borrowed_book(BookList* theBookList,BookList *theBorrowBookList )
 {
+    pBook head = theBookList->list;
+    pBook BorrowHead = theBorrowBookList->list;
     pBook temp = head->next;
     pBook Borrowtemp = BorrowHead->next;
     unsigned int id;
@@ -74,7 +81,7 @@ while(temp)
                     temp->copies --;
                 }
 
-                int num = 1;
+
                 if(!Borrowtemp)
                 {
                     Borrowtemp = (pBook)malloc(sizeof(Book));
@@ -86,7 +93,7 @@ while(temp)
                             (Borrowtemp->copies)++;
                              return 1;
                         }
-                        num++;
+
                         Borrowtemp = Borrowtemp->next;
                     }
                     Borrowtemp = BorrowHead->next;
@@ -100,7 +107,7 @@ while(temp)
                     Borrowtemp = last;
 
                 }
-                Borrowtemp->id = num;
+                Borrowtemp->id = theBorrowBookList->length+1;
                 char title[100];
                 char authors[100];
                 Borrowtemp->title = (char*)malloc(sizeof(strlen(title)));
@@ -118,7 +125,10 @@ while(temp)
     return 0;
 }
 
-int remove_Borrowed_book(pBook Borrowhead){
+int remove_Borrowed_book(BookList* theBookList,BookList *theBorrowBookList){
+    pBook head = theBookList->list;
+    pBook Htemp = head->next;
+    pBook Borrowhead = theBorrowBookList->list;
     pBook temp = Borrowhead->next;
     pBook tail = Borrowhead;
     unsigned int id;
@@ -135,6 +145,7 @@ int remove_Borrowed_book(pBook Borrowhead){
         while (temp) {
             if (temp->id == id) {
                 if (temp->copies == 1){
+                    theBorrowBookList->length--;
                     temp = temp->next;
                     tail->next = temp;
                     temp = Borrowhead->next;
@@ -144,10 +155,14 @@ int remove_Borrowed_book(pBook Borrowhead){
                         num++;
                         temp = temp->next;
                     }
-
                 }else{
                     temp->copies -- ;
-
+                }
+                while(Htemp){
+                    if (Htemp->id == id){
+                        Htemp->copies++;
+                    }
+                    Htemp = Htemp->next;
                 }
                 return 1;
             }else{
@@ -157,13 +172,12 @@ int remove_Borrowed_book(pBook Borrowhead){
 
         }
     }
-    printf("Invalid id.");
+    printf("Invalid id.\n");
     return 0;
 };
 
 
-void store_borrowed_books(pBook head){
-    FILE *fw = fopen("borrowbooks.txt","wt");
+void store_borrowed_books(FILE *fw,pBook head){
     pBook temp=head->next;
 //    if(temp==NULL){
 //        printf(("NodeList is NULL"));
@@ -176,6 +190,7 @@ void store_borrowed_books(pBook head){
     free(temp);
     fclose(fw);
 }
+
 int Book_Borrowed_Menu()
 {
     int choice;
@@ -191,38 +206,50 @@ int Book_Borrowed_Menu()
     return choice;
 }
 
-void user_login(pBook head){
+void user_login(int userid,BookList* theBookList){
+    // open the user's own file
+    char number[20];
+    itoa(userid, number,10);
+    char *suffix = ".txt";
+    strcat(number, suffix);
+    FILE *fr = fopen(number,"rb");
+    // the book node list
+    pBook head = theBookList->list;
     int choice = 0;
     int userLoggedIn = 1;
+    // create the borrowed node list
     pBook BorrowHead = create_BorrowedBook_List();
-    FILE *fr = fopen("borrowbooks.txt","rb");
+    BookList *theBorrowBookList = (BookList *) malloc(sizeof(BookList));
+    theBorrowBookList->list = BorrowHead;
+    theBorrowBookList->length = 0;
+
     if(fr==NULL)
     {
         printf("File open error.\n");
         exit(0);
     }
-    load_books(fr,BorrowHead);
+    load_books(fr,theBorrowBookList);
 
     while(userLoggedIn)
     {
         choice = Book_Borrowed_Menu();
         if(1==choice)
         {
-            display_book(head);
-            int x = add_Borrowed_book(head,BorrowHead);
+            display_book(theBookList);
+            int x = add_Borrowed_book(theBookList,theBorrowBookList);
             if(x==1){
                 printf("Successfully add book!\n");
-                display_Borrowed_book(BorrowHead);
+                display_Borrowed_book(theBorrowBookList);
             }
 
         }
         else if(2==choice)
         {
-            display_Borrowed_book(BorrowHead);
-            int x = remove_Borrowed_book(BorrowHead);
+            display_Borrowed_book(theBorrowBookList);
+            int x = remove_Borrowed_book(theBookList,theBorrowBookList);
             if(x==1){
                 printf("Successfully remove book!\n");
-                display_Borrowed_book(BorrowHead);
+                display_Borrowed_book(theBorrowBookList);
             }
 
 
@@ -233,17 +260,19 @@ void user_login(pBook head){
         }
         else if(4==choice)
         {
-            display_Borrowed_book(BorrowHead);
+            display_Borrowed_book(theBorrowBookList);
 
         }
         else if(5==choice)
         {
-            display_book(head);
+            display_book(theBookList);
 
         }
         else if(6==choice)
         {
-            store_borrowed_books(BorrowHead);
+            FILE *fw = fopen(number,"wt");
+            store_borrowed_books(fw,BorrowHead);
+            store_books(head);
             return;
         }
         else

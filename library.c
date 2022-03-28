@@ -18,8 +18,8 @@ pBook create_Book_List()
 }
 
 //load books from file to list node
-void load_books(FILE *file,pBook pHead){
-//     initialize head node
+void load_books(FILE *file,BookList* theBookList){
+        pBook pHead =  theBookList->list;
         pBook cur = pHead;
         char title[100];
         char authors[100];
@@ -27,13 +27,14 @@ void load_books(FILE *file,pBook pHead){
     {
         pBook temp = (pBook)malloc(sizeof(Book));
 
-
         // if the pointer is at the end of the file,break
         if(5!=fscanf(file,"%u\t%s\t%s\t%u\t%u\n",&temp->id,title,authors,&temp->year,&temp->copies))
         {
             free(temp);
             break;
         }else{
+        //   copy the book from file to nodelist
+            theBookList->length++;
             temp->title = (char*)malloc(sizeof(strlen(title)));
             temp->authors = (char*)malloc(sizeof(strlen(authors)));
             strcpy(temp->title,title);
@@ -47,7 +48,8 @@ void load_books(FILE *file,pBook pHead){
 }
 
 // display book
-int display_book(pBook head){
+int display_book(BookList* theBookList){
+    pBook head = theBookList->list;
     // if no book in the library
     if(NULL==head->next)
     {
@@ -56,11 +58,11 @@ int display_book(pBook head){
     }
     //  display book
     pBook temp = head->next;
-    printf("ID\t\tTitle\t\tAuthor\t\tyear\t\tcopies\n");
+    printf("ID\t\tTitle\t\t\tAuthor\t\tyear\t\tcopies\n");
     while(temp)
     {
         printf("%u\t\t",temp->id);
-        printf("%s\t\t",temp->title);
+        printf("%s\t\t\t",temp->title);
         printf("%s\t\t",temp->authors);
         printf("%u\t\t",temp->year);
         printf("%u\n",temp->copies);
@@ -69,11 +71,14 @@ int display_book(pBook head){
     return 1;
 }
 
-void main_menu() {
+void run_library() {
     int libraryOpen = 1;
     int option = 0;
     // create library list node
     pBook head = create_Book_List();
+    BookList *theBookList = (BookList *) malloc(sizeof(BookList));
+    theBookList->list = head;
+    theBookList->length = 0;
     // open file
     FILE *fr = fopen("books.txt","rb");
     if(fr==NULL)
@@ -81,34 +86,34 @@ void main_menu() {
         printf("File open error.\n");
         exit(0);
     }
-    load_books(fr,head);
-
+    load_books(fr,theBookList);
 
     while (libraryOpen) {
         printf("\n Main menu options\n 1 Register an account or login\n 2 Display all books\n 3 Quit\n Choice:");
         scanf("%d",&option);
         if(option == 1)
         {
+            //  reg or login
             int x = reg_or_login();
             if(x==1){
-                  user_login(head);
-            }else if(x==2) {
-                librarian_login(head);
-            }else{
+                librarian_login(theBookList);
+            }else if(x == 0){
                 continue;
+            }else{
+                user_login(x,theBookList);
             }
         } else if (option == 2) {
-            display_book(head);
+            //  display books
+            display_book(theBookList);
         } else if (option == 3) {
+            // close library
             libraryOpen = 0;
+            free(theBookList);
             printf("\nClosing\n");
         }else{
+            // invalid choice warning
             clear();
             printf("\nUnknown option\n");
         }
     }
-}
-
-void  run_library(){
-    main_menu();
 }

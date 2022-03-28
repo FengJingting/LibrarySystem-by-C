@@ -1,2 +1,2 @@
 #include "book_management.h"
-void librarian_login(pBook head);
+void librarian_login(BookList* theBookList);

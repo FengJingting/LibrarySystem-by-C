@@ -1,7 +1,7 @@
 #include <string.h>
 #include "search_for_books.h"
 #include "book_management.h"
-
+#include "utility.h"
 
 void find_book_by_title(const char *title,pBook head){
     pBook book = head->next;

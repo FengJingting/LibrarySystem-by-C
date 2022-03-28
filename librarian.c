@@ -6,9 +6,10 @@
 #include <string.h>
 #include <stdlib.h>
 
-
-int add_book(pBook head)
+// librarian add a book
+int add_book(BookList* theBookList)
 {
+    pBook head = theBookList->list;
     pBook temp = head->next;
     char title[100];
     char authors[100];
@@ -17,19 +18,18 @@ int add_book(pBook head)
     printf("Enter the title of the book you wish to add:");
     scanf("\n");
     fgets(title,30,stdin);
+    // pretreatment
     if( title[ strlen(title) - 1 ] == '\n' )
     {
         title[ strlen(title) - 1] = '\0';
     }
-
+    // add the information of book
     printf("Enter the author of the book you wish to add:");
     scanf("%s",authors);
     printf("Enter the year of the book you wish to add was released:");
     scanf("%u",&year);
     printf("Enter the number of copies of the book:");
     scanf("%u",&copies);
-
-    int bookNum = 1;
     if(!temp)
     {
         temp = (pBook)malloc(sizeof(Book));
@@ -37,9 +37,9 @@ int add_book(pBook head)
     }else {
         while(temp)
         {
-            bookNum ++ ;
             if(0 == (strcmp(temp->title,title)) && 0 == (strcmp(temp->authors,authors)) && temp->year == year)
             {
+                // if the book already exits
                 printf("\nBook already exits,do you want to add copies based on it?\n 1 Yes\n 2 No\nEnter your choice:");
                 int option;
                 scanf("%d",&option);
@@ -67,7 +67,8 @@ int add_book(pBook head)
         temp->next = last;
         temp = last;
     }
-    temp->id = bookNum;
+    // copy the information to the listnode
+    temp->id = theBookList->length+1;
     temp->title = (char*)malloc(sizeof(strlen(title)));
     temp->authors = (char*)malloc(sizeof(strlen(authors)));
     strcpy(temp->title,title);
@@ -79,7 +80,9 @@ int add_book(pBook head)
     return 1;
 }
 
-int remove_book(pBook head){
+// librarian remove a book
+int remove_book(BookList* theBookList){
+    pBook  head = theBookList->list;
     pBook temp = head->next;
     pBook tail = head;
     unsigned int id;
@@ -87,17 +90,21 @@ int remove_book(pBook head){
     scanf("%u",&id);
     if(!temp)
     {
+        // if there are no book in the library
         printf("There are no book in the library!");
     }else {
         while (temp) {
             if (temp->id == id) {
-                printf("You want\n1.Remove all the copies\n2.Remove one copy ");
+                // remove all copies or just one book
+                printf("You want\n1.Remove all the copies\n2.Remove one copy\nEnter your choice: ");
                 int choice;
                 scanf("%d",&choice);
+                // if remove all copies
                 if(choice == 1){
                     temp = temp->next;
                     tail->next = temp;
                     temp = head->next;
+                    theBookList->length--;
                     int num=1;
                     while(temp){
                         temp->id = num;
@@ -105,6 +112,7 @@ int remove_book(pBook head){
                         temp = temp->next;
                     }
                 }else{
+                    // if remove just one copy
                     if (temp->copies == 1){
                         temp = temp->next;
                         tail->next = temp;
@@ -115,31 +123,25 @@ int remove_book(pBook head){
                             num++;
                             temp = temp->next;
                         }
-
                     }else{
                         temp->copies -- ;
                     }
                 }
-
                 return 1;
             }else{
                 temp = temp->next;
                 tail = tail->next;
             }
-
         }
     }
     printf("Book doesn't exist!");
     return 0;
 };
 
+// store the book information from nodelist to file
 void store_books(pBook head){
     FILE *fw = fopen("books.txt","wt");
     pBook temp=head->next;
-//    if(temp==NULL){
-//        printf(("NodeList is NULL"));
-//        return;
-//    }
     while(temp){
         fprintf(fw,"%u\t%s\t%s\t%u\t%u\n", temp->id, temp->title, temp->authors, temp->year, temp->copies);
         temp  = temp->next;
@@ -148,7 +150,9 @@ void store_books(pBook head){
     fclose(fw);
 }
 
-void librarian_login(pBook head){
+// librarian login menu
+void librarian_login(BookList* theBookList){
+    pBook head = theBookList->list;
     int choice = 0;
     int librarianLoggedIn = 1;
     while(librarianLoggedIn)
@@ -157,48 +161,46 @@ void librarian_login(pBook head){
         scanf("%d",&choice);
         if(1==choice)
         {
-            int x = add_book(head);
-            store_books(head);
+            // add a book
+            int x = add_book(theBookList);
             if(x==1){
                 printf("Successfully add book!\n");
-                display_book(head);
-            }else{
-
+                display_book(theBookList);
             }
         }
         else if(2==choice)
         {
-            display_book(head);
-            int x = remove_book(head);
+            // remove a book
+            display_book(theBookList);
+            int x = remove_book(theBookList);
             if(x==1){
                 printf("Successfully remove book!\n");
-                display_book(head);
+                display_book(theBookList);
             }
-        }
-        else if(0==choice)
-        {
-            printf("please continue");
         }
         else if(3==choice)
         {
+            // search for book
             search_for_books(head);
         }
         else if(4==choice)
         {
-            display_book(head);
+            // display book
+            display_book(theBookList);
         }
         else if(5==choice)
         {
+            // store books and log out
+            store_books(head);
             librarianLoggedIn = 0;
         }
         else
         {
+            // handle invalid option
             clear();
             printf("Invalid Choice");
-
         }
     }
-
 }
 
 

@@ -2,7 +2,6 @@
 #include "book_management.h"
 #include "utility.h"
 #include <stdio.h>
-#include <malloc.h>
 #include <string.h>
 #include <stdlib.h>
 
@@ -12,7 +11,11 @@ pNode createList()
     // initialize head node
     pNode pHead = (pNode)malloc(sizeof(LNode));
     pHead->next=NULL;
+    return pHead;
+}
 
+// load user information from file to the list
+void load_user(pNode head){
     // read file
     FILE *fp = fopen("user.txt","r+");
     if(NULL == fp)
@@ -20,24 +23,22 @@ pNode createList()
         printf("FILE NOT FOUND");
         exit(-1);
     }
-
-    pNode cur = pHead;
+    pNode cur = head;
     while(1)
     {
         pNode temp = (pNode)malloc(sizeof(LNode));
-        if(!temp)
-            exit(-1);
-
-        if(3!=fscanf(fp,"%s%s%s",temp->username,temp->name,temp->pass))
+        // if the pointer is at the end of the file,break
+        if(4!=fscanf(fp,"%d%s%s%s",&temp->userid,temp->username,temp->name,temp->pass))
         {
             free(temp);
             break;
+        }else{
+            cur->next=temp;
+            cur = temp;
+            cur->next = NULL;
         }
-        cur->next=temp;
-        cur = temp;
-        cur->next = NULL;
     }
-    return pHead;
+    fclose(fp);
 }
 
 //login
@@ -65,33 +66,28 @@ int login(pNode head)
             printf("success\n");
             getchar();
             if(0==strcmp("Librarian",username) && 0==strcmp("Librarian",pass)){
-                return 2;
+                return temp->userid;
             }
-            return 1;
+            return temp->userid;
         }
         temp = temp->next;
     }
     printf("Wrong User Name Or Password.");
-    getchar();
+    return 0;
 
 }
 
 
 void writeToFile(pNode head)
 {
-    FILE *fw = fopen("user.txt","a+");
+    FILE *fw = fopen("user.txt","w+");
     pNode temp=head->next;
     if(temp==NULL){
         printf(("temp is NULL"));
         return;
     }
     while(temp){
-        fprintf(fw,temp->username);
-        fprintf(fw,"\t");
-        fprintf(fw,temp->name);
-        fprintf(fw,"\t");
-        fprintf(fw,temp->pass);
-        fprintf(fw,"\n");
+        fprintf(fw,"%d\t%s\t%s\t%s\n", temp->userid, temp->username, temp->name, temp->pass);
         temp  = temp->next;
     }
 }
@@ -101,7 +97,6 @@ void writeToFile(pNode head)
 int registerUser(pNode head)
 {
     pNode temp = head->next;
-
     char name[20];
     char username[20];
     char pass[20];
@@ -111,6 +106,7 @@ int registerUser(pNode head)
     scanf("%s",username);
     printf("enter your password:");
     scanf("%s",pass);
+    int userid = 1;
     if(!temp)
     {
         temp = (pNode)malloc(sizeof(LNode));
@@ -118,6 +114,7 @@ int registerUser(pNode head)
     }else {
         while(temp)
         {
+            userid++;
             if(0==strcmp(temp->username,username))
             {
                 printf("username already exits.");
@@ -135,10 +132,21 @@ int registerUser(pNode head)
         temp = last;
     }
     //表中有用户则在最后一个节点后生成新节点
+    temp->userid = userid;
     strcpy(temp->username,username);
     strcpy(temp->name,name);
     strcpy(temp->pass,pass);
     temp->next=NULL;
+    // create user's borrowed book file
+
+    char number[20];
+    itoa(userid, number,10);
+    char *suffix = ".txt";
+    strcat(number, suffix);
+    printf("%s\n",number);
+
+    FILE *fw = fopen(number,"w+");
+    fclose(fw);
     return 1;
 }
 
@@ -153,18 +161,18 @@ int reg_or_login()
 {
     int choice;
     pNode head = createList();
+    load_user(head);
     while(1)
     {
         menu();
         scanf("%d",&choice);
-//        choice  = optionChoice();
         if(1==choice)
         {
             int y = login(head);
-            if (y == 2){
-                return 2;
-            }else if(y == 1){
-                return 1;
+            if (y == 0){
+                continue;
+            }else{
+                return y;
             }
         }
         else if(2==choice)
@@ -185,4 +193,3 @@ int reg_or_login()
         }
     }
 }
-
