@@ -15,9 +15,9 @@ pNode createList()
 }
 
 // load user information from file to the list
-void load_user(pNode head){
+void load_user(pNode head,char *userFile){
     // read file
-    FILE *fp = fopen("user.txt","r+");
+    FILE *fp = fopen(userFile,"r+");
     if(NULL == fp)
     {
         printf("FILE NOT FOUND");
@@ -78,9 +78,9 @@ int login(pNode head)
 }
 
 
-void writeToFile(pNode head)
+void writeToFile(pNode head,char *userFile)
 {
-    FILE *fw = fopen("user.txt","w+");
+    FILE *fw = fopen(userFile,"w+");
     pNode temp=head->next;
     if(temp==NULL){
         printf(("temp is NULL"));
@@ -138,33 +138,27 @@ int registerUser(pNode head)
     strcpy(temp->pass,pass);
     temp->next=NULL;
     // create user's borrowed book file
+    if (userid!=1){
+        char number[20];
+        sprintf(number,"%d",userid);
+        char *suffix = ".txt";
+        strcat(number, suffix);
+        printf("%s\n",number);
 
-    char number[20];
-    itoa(userid, number,10);
-    char *suffix = ".txt";
-    strcat(number, suffix);
-    printf("%s\n",number);
-
-    FILE *fw = fopen(number,"w+");
-    fclose(fw);
+        FILE *fw = fopen(number,"w+");
+        fclose(fw);
+    }
     return 1;
 }
 
-void menu() {
-    printf("\n1.login\n");
-    printf("2.register\n");
-    printf("3.exit\n");
-    printf("enter your choice:");
-}
-
-int reg_or_login()
+int reg_or_login(char *userFile)
 {
     int choice;
     pNode head = createList();
-    load_user(head);
+    load_user(head,userFile);
     while(1)
     {
-        menu();
+        printf("\n Register or Login Menu\n 1.login\n 2 register\n 3 Quit\n Choice:");
         scanf("%d",&choice);
         if(1==choice)
         {
@@ -174,13 +168,15 @@ int reg_or_login()
             }else{
                 return y;
             }
+            choice=0;
         }
         else if(2==choice)
         {
             int x = registerUser(head);
             if(x==1){
-                writeToFile(head);
+                writeToFile(head,userFile);
             }
+            choice=0;
         }
         else if(3==choice)
         {

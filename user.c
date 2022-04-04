@@ -59,8 +59,10 @@ int add_Borrowed_book(BookList* theBookList,BookList *theBorrowBookList )
         return 0;
     }
     int numBorrow = 0;
+    int numbooks = 0;
     while(Borrowtemp){
         numBorrow += Borrowtemp->copies ;
+        numbooks++;
         Borrowtemp = Borrowtemp->next;
     }
     if (numBorrow == 10){
@@ -69,58 +71,59 @@ int add_Borrowed_book(BookList* theBookList,BookList *theBorrowBookList )
     }
     Borrowtemp = BorrowHead->next;
 
-while(temp)
+    while(temp)
+    {
+        if(temp->id == id)
         {
-            if(temp->id == id)
-            {
-                //   if copies of book is 0
-                if(temp->copies == 0){
-                    printf("This book can't be borrowed,you can come next time.\n");
-                    return 0;
-                }else{
-                    temp->copies --;
-                }
-
-
-                if(!Borrowtemp)
-                {
-                    Borrowtemp = (pBook)malloc(sizeof(Book));
-                    BorrowHead->next = Borrowtemp;
-                }else{
-                    while(Borrowtemp){
-                        //  check if the user has borrowed this book
-                        if(0==strcmp(Borrowtemp->title,temp->title)&&0==strcmp(Borrowtemp->authors,temp->authors)){
-                            (Borrowtemp->copies)++;
-                             return 1;
-                        }
-
-                        Borrowtemp = Borrowtemp->next;
-                    }
-                    Borrowtemp = BorrowHead->next;
-                    while(Borrowtemp->next)
-                    {
-                        Borrowtemp = Borrowtemp->next;
-
-                    }
-                    pBook last = (pBook)malloc(sizeof(Book));
-                    Borrowtemp->next = last;
-                    Borrowtemp = last;
-
-                }
-                Borrowtemp->id = theBorrowBookList->length+1;
-                char title[100];
-                char authors[100];
-                Borrowtemp->title = (char*)malloc(sizeof(strlen(title)));
-                Borrowtemp->authors = (char*)malloc(sizeof(strlen(authors)));
-                strcpy(Borrowtemp->title,temp->title);
-                strcpy(Borrowtemp->authors,temp->authors);
-                Borrowtemp->year = temp->year;
-                Borrowtemp->copies = 1;
-                Borrowtemp->next=NULL;
-                return 1;
+            //   if copies of book is 0
+            if(temp->copies == 0){
+                printf("This book can't be borrowed,you can come next time.\n");
+                return 0;
+            }else{
+                temp->copies --;
             }
-        temp = temp->next;
+
+
+            if(!Borrowtemp)
+            {
+                Borrowtemp = (pBook)malloc(sizeof(Book));
+                BorrowHead->next = Borrowtemp;
+            }else{
+                while(Borrowtemp){
+                    //  check if the user has borrowed this book
+                    if(0==strcmp(Borrowtemp->title,temp->title)&&0==strcmp(Borrowtemp->authors,temp->authors)&&Borrowtemp->year==temp->year){
+                        (Borrowtemp->copies)++;
+                        return 1;
+                    }
+
+                    Borrowtemp = Borrowtemp->next;
+                }
+                Borrowtemp = BorrowHead->next;
+                while(Borrowtemp->next)
+                {
+                    Borrowtemp = Borrowtemp->next;
+
+                }
+                pBook last = (pBook)malloc(sizeof(Book));
+                Borrowtemp->next = last;
+                Borrowtemp = last;
+
+            }
+            theBorrowBookList->length = numbooks+1;
+            Borrowtemp->id = theBorrowBookList->length;
+            char title[100];
+            char authors[100];
+            Borrowtemp->title = (char*)malloc(sizeof(strlen(title)));
+            Borrowtemp->authors = (char*)malloc(sizeof(strlen(authors)));
+            strcpy(Borrowtemp->title,temp->title);
+            strcpy(Borrowtemp->authors,temp->authors);
+            Borrowtemp->year = temp->year;
+            Borrowtemp->copies = 1;
+            Borrowtemp->next=NULL;
+            return 1;
         }
+        temp = temp->next;
+    }
     printf("Invalid ID.\n");
     return 0;
 }
@@ -132,18 +135,28 @@ int remove_Borrowed_book(BookList* theBookList,BookList *theBorrowBookList){
     pBook temp = Borrowhead->next;
     pBook tail = Borrowhead;
     unsigned int id;
-    printf("Enter the id of the book you wish to return:");
-    scanf("%u",&id);
-    if(id<=0){
-        printf("Invalid id.");
-        return 0;
-    }
+
     if(!temp)
     {
         printf("You haven't borrow a book!");
+        return 0;
     }else {
+        printf("Enter the id of the book you wish to return:");
+        scanf("%u",&id);
+
+        if(id<=0){
+            printf("Invalid id.");
+            return 0;
+        }
         while (temp) {
             if (temp->id == id) {
+                while(Htemp){
+
+                    if (0==strcmp(Htemp->title,temp->title)&&0==strcmp(Htemp->authors,temp->authors)&&Htemp->year==temp->year){
+                        Htemp->copies++;
+                    }
+                    Htemp = Htemp->next;
+                }
                 if (temp->copies == 1){
                     theBorrowBookList->length--;
                     temp = temp->next;
@@ -158,12 +171,7 @@ int remove_Borrowed_book(BookList* theBookList,BookList *theBorrowBookList){
                 }else{
                     temp->copies -- ;
                 }
-                while(Htemp){
-                    if (Htemp->id == id){
-                        Htemp->copies++;
-                    }
-                    Htemp = Htemp->next;
-                }
+
                 return 1;
             }else{
                 temp = temp->next;
@@ -191,25 +199,11 @@ void store_borrowed_books(FILE *fw,pBook head){
     fclose(fw);
 }
 
-int Book_Borrowed_Menu()
-{
-    int choice;
-    printf("\nUser Menu");
-    printf("\n1.Borrow a book\n");
-    printf("2.Return a book\n");
-    printf("3.Search for books\n");
-    printf("4.Display borrowed books\n");
-    printf("5.Display all books in library\n");
-    printf("6.Log out\n");
-    printf("enter your choice:\n");
-    scanf("%d",&choice);
-    return choice;
-}
 
-void user_login(int userid,BookList* theBookList){
+void user_login(int userid,BookList* theBookList,char *bookFile){
     // open the user's own file
     char number[20];
-    itoa(userid, number,10);
+    sprintf(number,"%d",userid);
     char *suffix = ".txt";
     strcat(number, suffix);
     FILE *fr = fopen(number,"rb");
@@ -232,15 +226,19 @@ void user_login(int userid,BookList* theBookList){
 
     while(userLoggedIn)
     {
-        choice = Book_Borrowed_Menu();
+        printf("\n User Menu\n 1.Borrow a book\n 2.Return a book\n 3.Search for books\n 4.Display borrowed books\n 5.Display all books in library\n 6.LOg out\n enter your choice:\n");
+        scanf("%d",&choice);
         if(1==choice)
         {
-            display_book(theBookList);
-            int x = add_Borrowed_book(theBookList,theBorrowBookList);
-            if(x==1){
-                printf("Successfully add book!\n");
-                display_Borrowed_book(theBorrowBookList);
+            int y = display_book(theBookList);
+            if (y==1){
+                int x = add_Borrowed_book(theBookList,theBorrowBookList);
+                if(x==1){
+                    printf("Successfully add book!\n");
+                    display_Borrowed_book(theBorrowBookList);
+                }
             }
+            choice = 0;
 
         }
         else if(2==choice)
@@ -251,28 +249,31 @@ void user_login(int userid,BookList* theBookList){
                 printf("Successfully remove book!\n");
                 display_Borrowed_book(theBorrowBookList);
             }
-
+            choice = 0;
 
         }
         else if(3==choice)
         {
             search_for_books(head);
+            choice = 0;
         }
         else if(4==choice)
         {
             display_Borrowed_book(theBorrowBookList);
+            choice = 0;
 
         }
         else if(5==choice)
         {
             display_book(theBookList);
+            choice = 0;
 
         }
         else if(6==choice)
         {
             FILE *fw = fopen(number,"wt");
             store_borrowed_books(fw,BorrowHead);
-            store_books(head);
+            store_books(head,bookFile);
             return;
         }
         else

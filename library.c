@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-//create library list node
+//create library list node and return
 pBook create_Book_List()
 {
     // initialize head node
@@ -19,10 +19,10 @@ pBook create_Book_List()
 
 //load books from file to list node
 void load_books(FILE *file,BookList* theBookList){
-        pBook pHead =  theBookList->list;
-        pBook cur = pHead;
-        char title[100];
-        char authors[100];
+    pBook pHead =  theBookList->list;
+    pBook cur = pHead;
+    char title[100];
+    char authors[100];
     while(1)
     {
         pBook temp = (pBook)malloc(sizeof(Book));
@@ -33,7 +33,7 @@ void load_books(FILE *file,BookList* theBookList){
             free(temp);
             break;
         }else{
-        //   copy the book from file to nodelist
+            //   copy the book from file to nodelist
             theBookList->length++;
             temp->title = (char*)malloc(sizeof(strlen(title)));
             temp->authors = (char*)malloc(sizeof(strlen(authors)));
@@ -48,9 +48,10 @@ void load_books(FILE *file,BookList* theBookList){
 }
 
 // display book
+// input: the BoookList Struct
+// output: if there are no book in the library,return 0; else, return 1
 int display_book(BookList* theBookList){
     pBook head = theBookList->list;
-    // if no book in the library
     if(NULL==head->next)
     {
         printf("No book in the Library.\n");
@@ -71,7 +72,9 @@ int display_book(BookList* theBookList){
     return 1;
 }
 
-void run_library() {
+// init the library
+// input: the pointer of bookFile and userFile
+void run_library(char *bookFile,char *userFile) {
     int libraryOpen = 1;
     int option = 0;
     // create library list node
@@ -79,32 +82,36 @@ void run_library() {
     BookList *theBookList = (BookList *) malloc(sizeof(BookList));
     theBookList->list = head;
     theBookList->length = 0;
-    // open file
-    FILE *fr = fopen("books.txt","rb");
+    // open file, if can't find,exit
+    FILE *fr = fopen(bookFile,"rb");
     if(fr==NULL)
     {
         printf("File open error.\n");
         exit(0);
     }
+    // load the file into the node list
     load_books(fr,theBookList);
 
+    // main menu
     while (libraryOpen) {
         printf("\n Main menu options\n 1 Register an account or login\n 2 Display all books\n 3 Quit\n Choice:");
         scanf("%d",&option);
         if(option == 1)
         {
             //  reg or login
-            int x = reg_or_login();
+            int x = reg_or_login(userFile);
             if(x==1){
-                librarian_login(theBookList);
+                librarian_login(theBookList,bookFile);
             }else if(x == 0){
-                continue;
+                clear();
             }else{
-                user_login(x,theBookList);
+                user_login(x,theBookList,bookFile);
             }
+            option = 0;
         } else if (option == 2) {
             //  display books
             display_book(theBookList);
+            option = 0;
         } else if (option == 3) {
             // close library
             libraryOpen = 0;

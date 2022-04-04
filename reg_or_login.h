@@ -1,1 +1,1 @@
-int reg_or_login();
+int reg_or_login(char *userFile);

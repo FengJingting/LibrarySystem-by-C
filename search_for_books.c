@@ -1,6 +1,7 @@
 #include <string.h>
 #include "search_for_books.h"
 #include "book_management.h"
+#include "library.h"
 #include "utility.h"
 
 void find_book_by_title(const char *title,pBook head){
@@ -66,37 +67,30 @@ void find_book_by_year(unsigned int year,pBook head){
     return;
 }
 
-int Search_Menu()
-{
-    int choice;
-    printf("\n1.Find books by title\n");
-    printf("2.Find books by author\n");
-    printf("3.Find books by year\n");
-    printf("4.Return to previous menu\n");
-    printf("enter your choice:");
-    scanf("%d",&choice);
-    return choice;
-}
+
+
 void search_for_books(pBook head){
     printf("\nLoading search menu...\n");
     int choice;
     while(1)
     {
-        choice = Search_Menu();
+        printf("\n Search book options\n 1.Find books by title\n 2.Find books by author\n 3.Find books by year\n 4.Return to previous menu\n Choice:");
+        scanf("%d",&choice);
         if(1==choice)
         {
             const char title[20];
             printf("\nPlease enter title:\n");
             scanf("%s",title);
             find_book_by_title (title,head);
+            choice = 0;
         }
         else if(2==choice)
         {
             const char authors[20];
             printf("\nPlease enter authors:\n");
-
             scanf("%s",authors);
             find_book_by_author (authors,head);
+            choice = 0;
         }
         else if(3==choice)
         {
@@ -104,6 +98,7 @@ void search_for_books(pBook head){
             printf("\nPlease enter year:\n");
             scanf("%u",&year);
             find_book_by_year(year,head);
+            choice = 0;
         }
         else if(4==choice)
         {
