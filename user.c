@@ -226,7 +226,7 @@ void user_login(int userid,BookList* theBookList,char *bookFile){
 
     while(userLoggedIn)
     {
-        printf("\n User Menu\n 1.Borrow a book\n 2.Return a book\n 3.Search for books\n 4.Display borrowed books\n 5.Display all books in library\n 6.LOg out\n enter your choice:\n");
+        printf("\n User Menu\n 1.Borrow a book\n 2.Return a book\n 3.Search for books\n 4.Display borrowed books\n 5.Display all books in library\n 6.Log out\n enter your choice:\n");
         scanf("%d",&choice);
         if(1==choice)
         {
@@ -238,6 +238,7 @@ void user_login(int userid,BookList* theBookList,char *bookFile){
                     display_Borrowed_book(theBorrowBookList);
                 }
             }
+            clear();
             choice = 0;
 
         }
@@ -249,6 +250,7 @@ void user_login(int userid,BookList* theBookList,char *bookFile){
                 printf("Successfully remove book!\n");
                 display_Borrowed_book(theBorrowBookList);
             }
+            clear();
             choice = 0;
 
         }

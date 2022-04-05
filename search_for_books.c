@@ -97,7 +97,15 @@ void search_for_books(pBook head){
             unsigned int year;
             printf("\nPlease enter year:\n");
             scanf("%u",&year);
-            find_book_by_year(year,head);
+            // if the year is valid,return
+            if(year>=2022 || year<=1500){
+                printf("Invalid year!");
+                return 0;
+            }else{
+                find_book_by_year(year,head);
+            }
+
+            clear();
             choice = 0;
         }
         else if(4==choice)

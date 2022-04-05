@@ -30,8 +30,16 @@ int add_book(BookList* theBookList)
     scanf("%s",authors);
     printf("Enter the year of the book you wish to add was released:");
     scanf("%u",&year);
+    if(year>=2022 || year<=1500){
+        printf("Invalid year!");
+        return 0;
+    }
     printf("Enter the number of copies of the book:");
     scanf("%u",&copies);
+    if(copies>=1000 || copies<=0){
+        printf("Invalid copies!");
+        return 0;
+    }
     int numbooks = 0;
 
     if(!temp)
@@ -90,18 +98,18 @@ int add_book(BookList* theBookList)
 // input: the booklist struct
 // output: if successfully remove book,return 1,else return 0
 int remove_book(BookList* theBookList){
-    pBook  head = theBookList->list;
+    pBook head = theBookList->list;
     pBook temp = head->next;
     pBook tail = head;
-    unsigned int id;
-    printf("Enter the id of the book you wish to remove:");
-    scanf("%u",&id);
     if(!temp)
     {
         // if there are no book in the library,return
         printf("There are no book in the library!");
         return 0;
     }else {
+        unsigned int id;
+        printf("Enter the id of the book you wish to remove:");
+        scanf("%u",&id);
         while (temp) {
             if (temp->id == id) {
                 // ask the librarian if remove all copies or just one book
@@ -179,18 +187,20 @@ void librarian_login(BookList* theBookList,char *bookFile){
                 printf("Successfully add book!\n");
                 display_book(theBookList);
             }
+            clear();
             choice = 0;
         }
         else if(2==choice)
         {
             // remove a book
-            display_book(theBookList);
+            int display_book(theBookList);
             int x = remove_book(theBookList);
             if(x==1){
                 printf("Successfully remove book!\n");
                 display_book(theBookList);
             }
             choice = 0;
+            clear();
         }
         else if(3==choice)
         {

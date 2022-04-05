@@ -143,8 +143,6 @@ int registerUser(pNode head)
         sprintf(number,"%d",userid);
         char *suffix = ".txt";
         strcat(number, suffix);
-        printf("%s\n",number);
-
         FILE *fw = fopen(number,"w+");
         fclose(fw);
     }
@@ -164,11 +162,11 @@ int reg_or_login(char *userFile)
         {
             int y = login(head);
             if (y == 0){
-                continue;
+                choice=0;
             }else{
+                choice=0;
                 return y;
             }
-            choice=0;
         }
         else if(2==choice)
         {
